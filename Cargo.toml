@@ -4,5 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-chemistru-elements-api = { git = "https://github.com/Ross-Morgan/chemistru-elements-api" }
-petgraph = "0.6.4"
+chemistru-macro-api = "0.1.0"
