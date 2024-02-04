@@ -11,5 +11,5 @@ pub struct SimObject {
 
 pub enum Object {
     Molecule(CovalentMolecule),
-    Atom
+    Atom,
 }

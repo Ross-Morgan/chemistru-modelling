@@ -1,8 +1,44 @@
-use chemistru_modelling::standard_form::StandardForm;
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+
+use bevy::prelude::*;
+use bevy_egui::{EguiContexts, EguiPlugin};
 
 fn main() {
-    let a = StandardForm::new(2.0, 3);
+    let plugins = DefaultPlugins.set(WindowPlugin {
+        primary_window: Some(Window {
+            resizable: false,
+            mode: bevy::window::WindowMode::BorderlessFullscreen,
+            ..default()
+        }),
+        ..default()
+    });
 
-    println!("a = {:?}", a);    
-    println!("a² = {:?}", a.powf(2.0));    
+    App::new()
+        .add_plugins(plugins)
+        .add_plugins(EguiPlugin)
+        .add_systems(Update, my_ui)
+        .run();
+}
+
+fn my_ui(mut contexts: EguiContexts) {
+    egui::Window::new("Control Panel").show(contexts.ctx_mut(), |ui| {
+        ui.label("Control Panel Entry 1");
+        ui.label("Control Panel Entry 2");
+        
+        let mut selected = Scenario::Empty;
+
+        egui::ComboBox::from_label("Scenario")
+        .selected_text(format!("{selected:?}"))
+            .show_ui(ui, |ui| {
+                ui.selectable_value(&mut selected, Scenario::Empty, "Empty");
+                ui.selectable_value(&mut selected, Scenario::HydrogenHalide, "Hydrogen Halide");
+            });
+
+    });
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
+enum Scenario {
+    Empty,
+    HydrogenHalide,
 }

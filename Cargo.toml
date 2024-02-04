@@ -3,8 +3,22 @@ name = "chemistru-modelling"
 version = "0.1.0"
 edition = "2021"
 
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
 [dependencies]
 chemistru-macro-api = "0.1.0"
 chemistru-elements = "0.6.0"
 
 terminable_threads = "0.2.1"
+
+eframe = "0.24.0"
+egui_extras = "0.24.0"
+image = "0.24.8"
+bevy = { version = "0.12.1", features = ["dynamic_linking"] }
+bevy_egui = "0.24.0"
+egui_dock = "0.10.0"
+egui = "0.24.0"
