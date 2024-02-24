@@ -24,16 +24,15 @@ fn my_ui(mut contexts: EguiContexts) {
     egui::Window::new("Control Panel").show(contexts.ctx_mut(), |ui| {
         ui.label("Control Panel Entry 1");
         ui.label("Control Panel Entry 2");
-        
+
         let mut selected = Scenario::Empty;
 
         egui::ComboBox::from_label("Scenario")
-        .selected_text(format!("{selected:?}"))
+            .selected_text(format!("{selected:?}"))
             .show_ui(ui, |ui| {
                 ui.selectable_value(&mut selected, Scenario::Empty, "Empty");
                 ui.selectable_value(&mut selected, Scenario::HydrogenHalide, "Hydrogen Halide");
             });
-
     });
 }
 
