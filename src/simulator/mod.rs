@@ -48,7 +48,9 @@ impl SimSpace {
 }
 
 fn calculate_forces(atomic_number: u8, distance: f64) -> Vec<f64> {
-    let polarisability
+    let polarisability = todo!();
 
-    let dispersion = dispersion_force(polarisability, first_ionisation_energy((atomic_number as f64).into()), distance.into());
+    let dispersion = dispersion_force(polarisability, first_ionisation_energy(atomic_number.try_into().unwrap()), distance.into());
+
+    vec![]
 }

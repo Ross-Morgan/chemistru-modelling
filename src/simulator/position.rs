@@ -1,3 +1,4 @@
+#[derive(Copy, Clone, Debug, Default, PartialEq, PartialOrd)]
 pub struct Position(f64, f64, f64);
 
 impl Position {

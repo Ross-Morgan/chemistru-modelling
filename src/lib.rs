@@ -1,3 +1,5 @@
+use standard_form::StandardForm;
+
 pub mod molecule;
 pub mod simulator;
 pub mod standard_form;
@@ -8,8 +10,8 @@ mod data;
 #[allow(unused)]
 mod forces;
 
-const PERMEABILITY: StandardForm<f64> = StandardForm(4 * std::f64::consts::PI, -7);
-const PERMITTIVITY: StandardForm<f64> = StandardForm(8.85, -12);
+const PERMEABILITY: StandardForm = StandardForm::new_const(4.0 * std::f64::consts::PI, -7);
+const PERMITTIVITY: StandardForm = StandardForm::new_const(8.85, -12);
 
 struct Object;
 
