@@ -1,7 +1,7 @@
 # Chemistru Modelling
 
-[![License](https://img.shields.io/badge/)]()
-[![CI]()]()
+![License](https://img.shields.io/badge/)
+![CI]()
 
 # Attribtion
 
