@@ -1,5 +1,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+use chemistru_modelling::simulator::Scenario;
+
 use bevy::prelude::*;
 use bevy_egui::{EguiContexts, EguiPlugin};
 
@@ -36,8 +38,3 @@ fn my_ui(mut contexts: EguiContexts) {
     });
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
-enum Scenario {
-    Empty,
-    HydrogenHalide,
-}

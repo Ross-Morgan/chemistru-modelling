@@ -22,3 +22,5 @@ bevy = { version = "0.12.1", features = ["dynamic_linking"] }
 bevy_egui = "0.24.0"
 egui_dock = "0.10.0"
 egui = "0.24.0"
+rayon = "1.10.0"
+itertools = "0.12.1"
